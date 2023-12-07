@@ -1,0 +1,20 @@
+{
+  "secondary" : "#4C6B89",
+  "listBackground" : "#4C6B89",
+  "blue" : "#4C6B89",
+  "font" : "#2F2F2F",
+  "gray" : "#4E4E4E",
+  "background" : "#E4E4E4",
+  "red" : "#A7582D",
+  "orange" : "#855234",
+  "green" : "#5A6A46",
+  "primary_font" : "#DDDBCE",
+  "primary" : "#4C6B89",
+  "listItemBackground" : "#DDDBCE",
+  "listItemFont" : "#2F2F2F",
+  "cyan" : "#8F916C",
+  "purple" : "#7E6956",
+  "yellow" : "#AD966E",
+  "btn_font" : "#E4E4E4",
+  "block" : "#DDDBCE"
+}
