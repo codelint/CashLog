@@ -1,5 +1,30 @@
 {
     "version": "1.08",
     "update_time": 0,
-    "themes": ["first", "second", "third"]
+    "themes": [
+        {
+            "name": "first",
+            "title": "Theme:NO1",
+            "author": "DGMan",
+            "summary": ""
+        },
+        {
+            "name": "second",
+            "title": "Theme:NO2",
+            "author": "DGMan",
+            "summary": ""
+        },
+        {
+            "name": "third",
+            "title": "Theme:NO3",
+            "author": "DGMan",
+            "summary": ""
+        },
+        {
+            "name": "fouth",
+            "title": "Theme:NO4",
+            "author": "DGMan",
+            "summary": ""
+        }
+    ]
 }
