@@ -1,0 +1,56 @@
+{
+    "fonts": [
+        {
+            "name": "悠然小楷",
+            "file": "slideyouran-Regular.ttf",
+            "size": 14327692,
+            "md5": "73e63b8f09dd7cc00ad223b4cd467f59",
+            "licence": "https://mp.weixin.qq.com/s/RfZ95hpR4l-QH_V_m6ZNfQ"
+        },
+        {
+            "name": "志莽行书",
+            "file": "ZhiMangXing-Regular.ttf",
+            "size": 4063532,
+            "md5": "b8fc4ff2d55758f3fc34a126a1ffeaa0",
+            "licence": "https://github.com/google/fonts/blob/master/ofl/zhimangxing/OFL.txt"
+        },
+        {
+            "name": "鸿雷拙书简体",
+            "file": "SlideHongLeiZhuo-Regular.otf",
+            "size": 6495872,
+            "md5": "099f6bb19a1075abbe876ac84914e7a0",
+            "licence": "https://mp.weixin.qq.com/s/aAR8H_zzcqrngcHG1ZenfQ"
+        },
+        {
+            "name": "春风楷",
+            "file": "Slidechunfeng-Regular.ttf", 
+            "size": 9673860,
+            "md5": "e882af1a858ee5b61cddf1e2a8c0272f",
+            "licence": "https://mp.weixin.qq.com/s/CRnRsYu8ymlG9_oK6wmBag"
+        },
+        {
+            "name": "夏行楷",
+            "file": "Slidexiaxing-Regular.ttf", 
+            "md5": "2268941c82d850b3cbecdb96d8737ad4",
+            "size": 10073644,
+            "md5": "2268941c82d850b3cbecdb96d8737ad4",
+            "licence": "https://mp.weixin.qq.com/s/CRnRsYu8ymlG9_oK6wmBag"
+        },
+        {
+            "name": "秋鸿楷",
+            "file": "Slideqiuhong-Regular.ttf", 
+            "size": 14924580,
+            "md5": "6879bbd9dee20c5414218ce6f0fd2893",
+            "licence": "https://mp.weixin.qq.com/s/CRnRsYu8ymlG9_oK6wmBag"
+        },
+        {
+            "name": "江西拙楷", 
+            "file": "SlideJiangXiZhuo-Regular.ttf",
+            "size": 9917076,
+            "md5": "307fbef9d640cdb85c82370ada99a0d3",
+            "licence": "https://mp.weixin.qq.com/s/uZxL5YlQboT2oEB4qL0PIg"
+        }
+
+    ]
+
+}
