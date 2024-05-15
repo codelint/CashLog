@@ -49,8 +49,14 @@
             "size": 9917076,
             "md5": "307fbef9d640cdb85c82370ada99a0d3",
             "licence": "https://mp.weixin.qq.com/s/uZxL5YlQboT2oEB4qL0PIg"
+        },
+        {
+            "name": "演示佛系体", 
+            "file": "Slidefu-Regular.ttf",
+            "size": 15172184,
+            "md5": "14b2e49201b7f7ec8ea8749605680bee",
+            "licence": "https://mp.weixin.qq.com/s/xYN4ha5wptSqxuqc6kxunw"
         }
-
     ]
 
 }
