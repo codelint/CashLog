@@ -56,7 +56,15 @@
             "size": 15172184,
             "md5": "14b2e49201b7f7ec8ea8749605680bee",
             "licence": "https://mp.weixin.qq.com/s/xYN4ha5wptSqxuqc6kxunw"
+        },
+        {
+            "name": "临海隶书",
+            "file": "LinHaiLiShu-Regular.ttf",
+            "size": 2785624,
+            "md5": "ee1e86f2a537549667a3981afcfff2a7",
+            "licence": "https://mp.weixin.qq.com/s/dSdyAUOj8iKsb44P1GASXg"
         }
+
     ]
 
 }
