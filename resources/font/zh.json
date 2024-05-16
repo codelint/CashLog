@@ -63,6 +63,13 @@
             "size": 2785624,
             "md5": "ee1e86f2a537549667a3981afcfff2a7",
             "licence": "https://mp.weixin.qq.com/s/dSdyAUOj8iKsb44P1GASXg"
+        },
+        {
+            "name": "贤二体",
+            "file": "Xianeti-Regular.ttf",
+            "size": 11033656,
+            "md5": "80f90d9374eafe537fc590a3706c2766",
+            "licence": "https://github.com/wordshub"
         }
 
     ]
