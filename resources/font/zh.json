@@ -70,8 +70,14 @@
             "size": 11033656,
             "md5": "80f90d9374eafe537fc590a3706c2766",
             "licence": "https://github.com/wordshub"
+        },
+        {
+            "name": "青松手写体",
+            "file": "QingSongWritter-Regular.ttf",
+            "size": 3514688,
+            "md5": "9e422ee7366b943ebe18ddf60573856d",
+            "licence": "https://github.com/wordshub"
         }
-
     ]
 
 }
