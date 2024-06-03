@@ -2,6 +2,7 @@
     "apps": [
         {
             "name": "EasyLife",
+            "icon": "/resouces/app/easylife.jpg",
             "summary": "All kinds of gadgets, the Swiss Army knife of the APP industry, no ads, free to download and use, can be used without the Internet, mobile phone applications are essential",
             "names": {
                 "en": "EasyLife",
