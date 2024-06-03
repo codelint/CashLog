@@ -30,7 +30,20 @@
             },
             "scheme": "oriode",
             "url": "https://apps.apple.com/app/id6450941224"
+        },
+        {
+            "name": "Sport Timer",
+            "icon": "/resources/app/sportimer.jpg",
+            "summary": "",
+            "names": {},
+            "summaries": {
+                "zh": "运动计时器",
+                "zh_hk": "運動計時器"
+            },
+            "scheme": "going",
+            "url": "https://apps.apple.com/app/id1560778016"
         }
+
 
         
     ]
