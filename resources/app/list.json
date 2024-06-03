@@ -9,10 +9,29 @@
                 "zh": "米老虎"
             },
             "summaries": {
-                "zh": "各种小工具，APP届的瑞士军刀，没广告，可免费下载使用，可不联网使用，堪称业界良心，手机应用必备" 
+                "zh": "各种小工具，APP届的瑞士军刀，没广告，可免费下载使用，可不联网使用，堪称业界良心，手机应用必备",
+                "zh_hk": "各種小工具，APP屆的瑞士軍刀，沒廣告，可免費下載使用，可不聯網使用，堪稱業界良心，手機應用必備",
+                "zh_tw": "各種小工具，APP屆的瑞士軍刀，沒廣告，可免費下載使用，可不聯網使用，堪稱業界良心，手機應用必備"
             },
             "scheme": "easylife",
             "url": "https://apps.apple.com/app/id1586203742"
+        },
+        {
+            "name": "Oriode",
+            "icon": "/resources/app/oriode.png",
+            "summary": "",
+            "names": {
+                "en": "Oriode",
+                "zh": "箴曰"
+            },
+            "summaries": {
+                "zh": "一个每天给你推送鸡汤的小应用",
+                "zh_hk": "一個每天給你推送雞湯的小應用"
+            },
+            "scheme": "oriode",
+            "url": "https://apps.apple.com/app/id6450941224"
         }
+
+        
     ]
 }
