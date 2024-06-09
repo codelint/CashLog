@@ -26,6 +26,7 @@
                 "zh": "箴曰"
             },
             "summaries": {
+                "en": "A small app that pushes you spiritual food every day, so that you can be full of energy every day",
                 "zh": "一个每天给你推送鸡汤的小应用",
                 "zh_hk": "一個每天給你推送雞湯的小應用"
             },
@@ -38,6 +39,7 @@
             "summary": "",
             "names": {},
             "summaries": {
+                "en": "Helping you to counting sport time with voice",
                 "zh": "运动计时器",
                 "zh_hk": "運動計時器"
             },
