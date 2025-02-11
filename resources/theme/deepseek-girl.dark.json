@@ -1,0 +1,43 @@
+{
+    "background": "#1A1215",
+    "block": "#2D1D24",
+    "secondary": "#3F2832",
+    "font": "#E8D8DF",
+    "btn_font": "#FFFFFF",
+    
+    "listBackground": "#4A2B38",
+    "listItemBackground": "#36232B",
+    "listItemFont": "#FFA1C9",
+    
+    "primary": "#FF6B9D",
+    "red": "#FF475A",
+    "orange": "#FF9167",
+    "yellow": "#FFD27D",
+    "green": "#6DCF9F",
+    "blue": "#7AA9FF",
+    "purple": "#C17AFF",
+    "cyan": "#6DD6CF",
+    "pink": "#FF85B8",
+    "gray": "#6A5A63",
+    
+    "success": "#4DCC8E",
+    "danger": "#FF3D54",
+    "warning": "#FFA857",
+    
+    "primary_font": "#2D0F1C",
+    "secondary_font": "#FFB0D0",
+    
+    "red_font": "#3A0A11",
+    "orange_font": "#3A1A0D",
+    "yellow_font": "#3A2C0F",
+    "green_font": "#0C3A28",
+    "blue_font": "#0D1F3A",
+    "purple_font": "#250D3A",
+    "cyan_font": "#0C3A36",
+    "pink_font": "#3A0A1F",
+    "gray_font": "#2B2326",
+    
+    "success_font": "#0C3A28",
+    "danger_font": "#3A0A11",
+    "warning_font": "#3A1F0D"
+  }
