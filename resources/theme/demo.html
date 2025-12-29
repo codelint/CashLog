@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashLog Colors</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            transition: background 0.3s ease;
+        }
+
+        .card-header:hover {
+            background: linear-gradient(135deg, #e8ecf1 0%, #b8c8d9 100%);
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .card-header .summary {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .card-header .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+            color: #666;
+        }
+
+        .card-header.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .card-body.hidden {
+            display: none;
+        }
+
+        .color-section {
+            margin-bottom: 20px;
+        }
+
+        .color-section h3 {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.1em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .color-item {
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .color-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .color-name {
+            display: block;
+            font-size: 0.8em;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        .color-value {
+            display: block;
+            font-size: 0.7em;
+            margin-top: 3px;
+            opacity: 0.6;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CashLog Colors</h1>
+        <div id="theme-cards"></div>
+    </div>
+
+    <script>
+        const themes = {
+            "first": {
+                "name": "first",
+                "title": "Theme:NO1",
+                "author": "DGMan",
+                "summary": "A warm and soft beige theme with comfortable tones, perfect for daily use and suitable for most users",
+                "colors": {
+                    "background": "#F6F3E8",
+                    "font": "#161A30",
+                    "block": "#FEF8E6",
+                    "primary": "#83A2FF",
+                    "primary_font": "#FEFEFE",
+                    "secondary": "#D2DFFF",
+                    "secondary_font": "#161A30",
+                    "listBackground": "#D2DFFF",
+                    "listItemBackground": "#F6F3E8",
+                    "listItemFont": "#000000",
+                    "red": "#FA7070",
+                    "red_font": "#FFFFFF",
+                    "orange": "#F3B664",
+                    "orange_font": "#161A30",
+                    "yellow": "#CAC011",
+                    "yellow_font": "#161A30",
+                    "green": "#9FBB73",
+                    "green_font": "#FFFFFF",
+                    "blue": "#B4BDFF",
+                    "blue_font": "#161A30",
+                    "purple": "#C683D7",
+                    "purple_font": "#FFFFFF",
+                    "cyan": "#9AD0C2",
+                    "cyan_font": "#161A30",
+                    "gray": "#4E4E4E",
+                    "gray_font": "#FFFFFF",
+                    "pink": "#FFB4D8",
+                    "pink_font": "#161A30",
+                    "success": "#39AD4E",
+                    "success_font": "#FFFFFF",
+                    "danger": "#E76D5E",
+                    "danger_font": "#FFFFFF",
+                    "warning": "#E9AA68",
+                    "warning_font": "#161A30",
+                    "golden": "#FFD700",
+                    "golden_font": "#161A30",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#161A30",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#FFFFFF"
+                }
+            },
+            "second": {
+                "name": "second",
+                "title": "Theme:NO2",
+                "author": "DGMan",
+                "summary": "A calm and professional deep blue-gray theme with a business-oriented design, ideal for professional environments",
+                "colors": {
+                    "background": "#E4E4E4",
+                    "font": "#2F2F2F",
+                    "block": "#DDDBCE",
+                    "primary": "#4C6B89",
+                    "primary_font": "#DDDBCE",
+                    "secondary": "#5F7E9C",
+                    "secondary_font": "#DDDBCE",
+                    "listBackground": "#4C6B89",
+                    "listItemBackground": "#DDDBCE",
+                    "listItemFont": "#2F2F2F",
+                    "red": "#A7582D",
+                    "red_font": "#FFFFFF",
+                    "orange": "#855234",
+                    "orange_font": "#FFFFFF",
+                    "yellow": "#AD966E",
+                    "yellow_font": "#FFFFFF",
+                    "green": "#5A6A46",
+                    "green_font": "#FFFFFF",
+                    "blue": "#4C6B89",
+                    "blue_font": "#FFFFFF",
+                    "purple": "#7E6956",
+                    "purple_font": "#FFFFFF",
+                    "cyan": "#8F916C",
+                    "cyan_font": "#FFFFFF",
+                    "gray": "#4E4E4E",
+                    "gray_font": "#FFFFFF",
+                    "pink": "#C683D7",
+                    "pink_font": "#FFFFFF",
+                    "success": "#5A6A46",
+                    "success_font": "#FFFFFF",
+                    "danger": "#A7582D",
+                    "danger_font": "#FFFFFF",
+                    "warning": "#855234",
+                    "warning_font": "#FFFFFF",
+                    "golden": "#D4AF37",
+                    "golden_font": "#2F2F2F",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#2F2F2F",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#FFFFFF"
+                }
+            },
+            "third": {
+                "name": "third",
+                "title": "Theme:NO3",
+                "author": "DGMan",
+                "summary": "A soft and romantic pink theme with feminine design, creating a warm and cozy atmosphere",
+                "colors": {
+                    "background": "#F4E0EA",
+                    "font": "#6F7E92",
+                    "block": "#EFC9D6",
+                    "primary": "#E676A7",
+                    "primary_font": "#F0E9DF",
+                    "secondary": "#F1B3CD",
+                    "secondary_font": "#6F7E92",
+                    "listBackground": "#F1B3CD",
+                    "listItemBackground": "#E7C6CE",
+                    "listItemFont": "#6F7E92",
+                    "red": "#E676A7",
+                    "red_font": "#F0E9DF",
+                    "orange": "#F89880",
+                    "orange_font": "#6F7E92",
+                    "yellow": "#A3BB56",
+                    "yellow_font": "#6F7E92",
+                    "green": "#6CAB62",
+                    "green_font": "#2A2A2A",
+                    "blue": "#83A5C1",
+                    "blue_font": "#2A2A2A",
+                    "purple": "#EE82EE",
+                    "purple_font": "#2A2A2A",
+                    "cyan": "#C6C7B3",
+                    "cyan_font": "#2A2A2A",
+                    "gray": "#BEC6CF",
+                    "gray_font": "#6F7E92",
+                    "pink": "#F1B3CD",
+                    "pink_font": "#6F7E92",
+                    "success": "#6CAB62",
+                    "success_font": "#6F7E92",
+                    "danger": "#E676A7",
+                    "danger_font": "#F0E9DF",
+                    "warning": "#F89880",
+                    "warning_font": "#6F7E92",
+                    "golden": "#FFD700",
+                    "golden_font": "#6F7E92",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#6F7E92",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#F0E9DF"
+                }
+            },
+            "fouth": {
+                "name": "fouth",
+                "title": "Theme:NO4",
+                "author": "DGMan",
+                "summary": "A natural earth-tone theme with comfortable colors, bringing a sense of nature and simplicity",
+                "colors": {
+                    "background": "#EFE7DD",
+                    "font": "#5A3A4A",
+                    "block": "#F9EBD9",
+                    "primary": "#8D5966",
+                    "primary_font": "#F9EBD9",
+                    "secondary": "#D8CDBC",
+                    "secondary_font": "#5A3A4A",
+                    "listBackground": "#D8CDBC",
+                    "listItemBackground": "#F9EBD9",
+                    "listItemFont": "#5A3A4A",
+                    "red": "#A7582D",
+                    "red_font": "#FFFFFF",
+                    "orange": "#855234",
+                    "orange_font": "#FFFFFF",
+                    "yellow": "#AD966E",
+                    "yellow_font": "#FFFFFF",
+                    "green": "#5A6A46",
+                    "green_font": "#FFFFFF",
+                    "blue": "#4C6B89",
+                    "blue_font": "#FFFFFF",
+                    "purple": "#7E6956",
+                    "purple_font": "#FFFFFF",
+                    "cyan": "#8F916C",
+                    "cyan_font": "#FFFFFF",
+                    "gray": "#4E4E4E",
+                    "gray_font": "#FFFFFF",
+                    "pink": "#C683D7",
+                    "pink_font": "#FFFFFF",
+                    "success": "#5A6A46",
+                    "success_font": "#FFFFFF",
+                    "danger": "#A7582D",
+                    "danger_font": "#FFFFFF",
+                    "warning": "#855234",
+                    "warning_font": "#FFFFFF",
+                    "golden": "#D4AF37",
+                    "golden_font": "#5A3A4A",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#5A3A4A",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#FFFFFF"
+                }
+            },
+            "fifth": {
+                "name": "fifth",
+                "title": "Theme:NO5",
+                "author": "DGMan",
+                "summary": "A bright and vibrant yellow theme with energetic tones, full of vitality and positive energy",
+                "colors": {
+                    "background": "#FFFFFF",
+                    "font": "#231816",
+                    "block": "#FEF8E6",
+                    "primary": "#FDCF31",
+                    "primary_font": "#231816",
+                    "secondary": "#F2E179",
+                    "secondary_font": "#231816",
+                    "listBackground": "#FEF8E6",
+                    "listItemBackground": "#FFFFFF",
+                    "listItemFont": "#231816",
+                    "red": "#E76D5E",
+                    "red_font": "#FEF8E6",
+                    "orange": "#E9AA68",
+                    "orange_font": "#FEF8E6",
+                    "yellow": "#F2DD26",
+                    "yellow_font": "#231816",
+                    "green": "#39AD4E",
+                    "green_font": "#FEF8E6",
+                    "blue": "#45B3DA",
+                    "blue_font": "#FEF8E6",
+                    "purple": "#E2D3E8",
+                    "purple_font": "#231816",
+                    "cyan": "#8ECCD7",
+                    "cyan_font": "#231816",
+                    "gray": "#AAAAAA",
+                    "gray_font": "#FEF8E6",
+                    "pink": "#FFB4D8",
+                    "pink_font": "#231816",
+                    "success": "#39AD4E",
+                    "success_font": "#FEF8E6",
+                    "danger": "#E76D5E",
+                    "danger_font": "#FEF8E6",
+                    "warning": "#E9AA68",
+                    "warning_font": "#FEF8E6",
+                    "golden": "#FFD700",
+                    "golden_font": "#231816",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#231816",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#FEF8E6"
+                }
+            },
+            "sixth": {
+                "name": "sixth",
+                "title": "Theme:NO6",
+                "author": "DGMan",
+                "summary": "A fresh and natural green theme with eye-friendly colors, perfect for long-term use and reducing eye strain",
+                "colors": {
+                    "background": "#FFFFFF",
+                    "font": "#1C1C1A",
+                    "block": "#F7F9EB",
+                    "primary": "#1E7D5C",
+                    "primary_font": "#F7F9EB",
+                    "secondary": "#D8E5B1",
+                    "secondary_font": "#1E7D5A",
+                    "listBackground": "#D8E5B1",
+                    "listItemBackground": "#F7F9EB",
+                    "listItemFont": "#1C1C1A",
+                    "red": "#886F6D",
+                    "red_font": "#F7F9EB",
+                    "orange": "#E3882F",
+                    "orange_font": "#F7F9EB",
+                    "yellow": "#FCDA5E",
+                    "yellow_font": "#F7F9EB",
+                    "green": "#1F7D5A",
+                    "green_font": "#F7F9EB",
+                    "blue": "#6691C2",
+                    "blue_font": "#F7F9EB",
+                    "purple": "#49548A",
+                    "purple_font": "#F7F9EB",
+                    "cyan": "#223835",
+                    "cyan_font": "#F7F9EB",
+                    "gray": "#989A94",
+                    "gray_font": "#F7F9EB",
+                    "pink": "#E676A7",
+                    "pink_font": "#F7F9EB",
+                    "success": "#1F7D5A",
+                    "success_font": "#F7F9EB",
+                    "danger": "#886F6D",
+                    "danger_font": "#F7F9EB",
+                    "warning": "#E3882F",
+                    "warning_font": "#F7F9EB",
+                    "golden": "#D4AF37",
+                    "golden_font": "#1C1C1A",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#1C1C1A",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#F7F9EB"
+                }
+            },
+            "seven": {
+                "name": "seven",
+                "title": "Theme:NO7",
+                "author": "DGMan",
+                "summary": "A classic dark theme with deep colors, designed to reduce eye fatigue and perfect for nighttime use",
+                "colors": {
+                    "background": "#000000",
+                    "font": "#FFFFFF",
+                    "block": "#1A1D24",
+                    "primary": "#8571CF",
+                    "primary_font": "#FFFFFF",
+                    "secondary": "#131313",
+                    "secondary_font": "#FEFEFE",
+                    "listBackground": "#131313",
+                    "listItemBackground": "#1A1D24",
+                    "listItemFont": "#FEFEFE",
+                    "red": "#FF5881",
+                    "red_font": "#FEFEFE",
+                    "orange": "#F37B56",
+                    "orange_font": "#FEFEFE",
+                    "yellow": "#F659BC",
+                    "yellow_font": "#FEFEFE",
+                    "green": "#0CBB85",
+                    "green_font": "#FEFEFE",
+                    "blue": "#289CD8",
+                    "blue_font": "#FEFEFE",
+                    "purple": "#8571CF",
+                    "purple_font": "#FEFEFE",
+                    "cyan": "#4583DA",
+                    "cyan_font": "#FEFEFE",
+                    "gray": "#666666",
+                    "gray_font": "#FEFEFE",
+                    "pink": "#FF6B9D",
+                    "pink_font": "#FEFEFE",
+                    "success": "#0CBB85",
+                    "success_font": "#FEFEFE",
+                    "danger": "#FF5881",
+                    "danger_font": "#FEFEFE",
+                    "warning": "#F37B56",
+                    "warning_font": "#FEFEFE",
+                    "golden": "#FFD700",
+                    "golden_font": "#000000",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#000000",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#FEFEFE"
+                }
+            },
+            "eight": {
+                "name": "eight",
+                "title": "Theme:NO8",
+                "author": "DGMan",
+                "summary": "An extreme dark theme with high contrast colors, designed for users who prefer the ultimate dark mode experience",
+                "colors": {
+                    "background": "#000000",
+                    "font": "#D6C6C5",
+                    "block": "#212120",
+                    "primary": "#2F375A",
+                    "primary_font": "#D6C6C5",
+                    "secondary": "#413838",
+                    "secondary_font": "#D6C6C5",
+                    "listBackground": "#000000",
+                    "listItemBackground": "#212120",
+                    "listItemFont": "#D6C6C5",
+                    "red": "#72331E",
+                    "red_font": "#D6C6C5",
+                    "orange": "#A35824",
+                    "orange_font": "#D6C6C5",
+                    "yellow": "#D3C55E",
+                    "yellow_font": "#2F375A",
+                    "green": "#3C8C5E",
+                    "green_font": "#D6C6C5",
+                    "blue": "#3A648E",
+                    "blue_font": "#D6C6C5",
+                    "purple": "#AD8C9C",
+                    "purple_font": "#D6C6C5",
+                    "cyan": "#216459",
+                    "cyan_font": "#D6C6C5",
+                    "gray": "#C1C1C5",
+                    "gray_font": "#D6C6C5",
+                    "pink": "#B87D8F",
+                    "pink_font": "#D6C6C5",
+                    "success": "#3C8C5E",
+                    "success_font": "#D6C6C5",
+                    "danger": "#72331E",
+                    "danger_font": "#D6C6C5",
+                    "warning": "#A35824",
+                    "warning_font": "#D6C6C5",
+                    "golden": "#D4AF37",
+                    "golden_font": "#000000",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#000000",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#D6C6C5"
+                }
+            },
+            "nine": {
+                "name": "nine",
+                "title": "Theme:NO9",
+                "author": "DGMan",
+                "summary": "A Chinese-style theme with elegant and subtle colors, featuring traditional Chinese aesthetics",
+                "colors": {
+                    "background": "#F4F3F1",
+                    "font": "#1E1E1E",
+                    "block": "#FFF5E1",
+                    "primary": "#C2002B",
+                    "primary_font": "#FEF6E1",
+                    "secondary": "#006336",
+                    "secondary_font": "#FBAF5B",
+                    "listBackground": "#FBAF5B",
+                    "listItemBackground": "#FFF5E1",
+                    "listItemFont": "#C2002B",
+                    "red": "#B70000",
+                    "red_font": "#F4F3F1",
+                    "orange": "#FFA915",
+                    "orange_font": "#F4F3F1",
+                    "yellow": "#E9CE80",
+                    "yellow_font": "#F4F3F1",
+                    "green": "#003B15",
+                    "green_font": "#F4F3F1",
+                    "blue": "#103665",
+                    "blue_font": "#F4F3F1",
+                    "purple": "#2C1275",
+                    "purple_font": "#F4F3F1",
+                    "cyan": "#1D6869",
+                    "cyan_font": "#F4F3F1",
+                    "gray": "#CAD3C9",
+                    "gray_font": "#F4F3F1",
+                    "pink": "#D9608E",
+                    "pink_font": "#F4F3F1",
+                    "success": "#006336",
+                    "success_font": "#F4F3F1",
+                    "danger": "#C2002B",
+                    "danger_font": "#F4F3F1",
+                    "warning": "#FFA915",
+                    "warning_font": "#F4F3F1",
+                    "golden": "#D4AF37",
+                    "golden_font": "#1E1E1E",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#1E1E1E",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#F4F3F1"
+                }
+            },
+            "tenth": {
+                "name": "tenth",
+                "title": "Theme:NO10",
+                "author": "DGMan",
+                "summary": "A dark red theme with strong contrast colors, featuring intense visual impact and bold design",
+                "colors": {
+                    "background": "#FDFDFD",
+                    "font": "#654846",
+                    "block": "#F9EBD9",
+                    "primary": "#A9C9C9",
+                    "primary_font": "#654846",
+                    "secondary": "#DDDBCE",
+                    "secondary_font": "#4C6B89",
+                    "listBackground": "#A9C9C9",
+                    "listItemBackground": "#F9EBD9",
+                    "listItemFont": "#654846",
+                    "red": "#654846",
+                    "red_font": "#EDCCAB",
+                    "orange": "#DB9860",
+                    "orange_font": "#EDCCAB",
+                    "yellow": "#EAA949",
+                    "yellow_font": "#255635",
+                    "green": "#255635",
+                    "green_font": "#EAA949",
+                    "blue": "#4C6B89",
+                    "blue_font": "#DDDBCE",
+                    "purple": "#7F6A6E",
+                    "purple_font": "#C6BEAB",
+                    "cyan": "#726A3F",
+                    "cyan_font": "#C6BEAB",
+                    "gray": "#C6BEAB",
+                    "gray_font": "#726A3F",
+                    "pink": "#D98C9E",
+                    "pink_font": "#EDCCAB",
+                    "success": "#255635",
+                    "success_font": "#EAA949",
+                    "danger": "#654846",
+                    "danger_font": "#EDCCAB",
+                    "warning": "#DB9860",
+                    "warning_font": "#EDCCAB",
+                    "golden": "#D4AF37",
+                    "golden_font": "#654846",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#654846",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#EDCCAB"
+                }
+            },
+            "deepseek-girl": {
+                "name": "deepseek-girl",
+                "title": "DeepSeek Girl",
+                "author": "DGMan",
+                "summary": "A cute pink theme with girly and lively design, perfect for young female users",
+                "colors": {
+                    "background": "#FFF5F5",
+                    "block": "#FFE6F0",
+                    "secondary": "#FFD1E0",
+                    "font": "#5A3A4A",
+                    "btn_font": "#FFFFFF",
+                    "listBackground": "#FFB4D8",
+                    "listItemBackground": "#FFE6F0",
+                    "listItemFont": "#D9417F",
+                    "primary": "#FF69B4",
+                    "red": "#FF8C94",
+                    "orange": "#FFB3A6",
+                    "yellow": "#FFE5B4",
+                    "green": "#B4EBBE",
+                    "blue": "#A3D8F4",
+                    "purple": "#D4B4FF",
+                    "cyan": "#9AE5E6",
+                    "pink": "#FFB4D8",
+                    "gray": "#D8C7D1",
+                    "success": "#B4EBBE",
+                    "danger": "#FF8C94",
+                    "warning": "#FFB3A6",
+                    "primary_font": "#FFFFFF",
+                    "secondary_font": "#5A3A4A",
+                    "red_font": "#FFFFFF",
+                    "orange_font": "#5A3A4A",
+                    "yellow_font": "#5A3A4A",
+                    "green_font": "#5A3A4A",
+                    "blue_font": "#5A3A4A",
+                    "purple_font": "#5A3A4A",
+                    "cyan_font": "#5A3A4A",
+                    "pink_font": "#5A3A4A",
+                    "gray_font": "#5A3A4A",
+                    "success_font": "#5A3A4A",
+                    "danger_font": "#FFFFFF",
+                    "warning_font": "#5A3A4A",
+                    "golden": "#FFD700",
+                    "golden_font": "#5A3A4A",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#5A3A4A",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#FFFFFF"
+                }
+            },
+            "deepseek-girl.dark": {
+                "name": "deepseek-girl.dark",
+                "title": "DeepSeek Girl Dark",
+                "author": "DGMan",
+                "summary": "A dark pink theme with stylish and personalized design, perfect for nighttime use",
+                "colors": {
+                    "background": "#1A1215",
+                    "block": "#2D1D24",
+                    "secondary": "#3F2832",
+                    "font": "#E8D8DF",
+                    "btn_font": "#FFFFFF",
+                    "listBackground": "#4A2B38",
+                    "listItemBackground": "#36232B",
+                    "listItemFont": "#FFA1C9",
+                    "primary": "#FF6B9D",
+                    "red": "#FF475A",
+                    "orange": "#FF9167",
+                    "yellow": "#FFD27D",
+                    "green": "#6DCF9F",
+                    "blue": "#7AA9FF",
+                    "purple": "#C17AFF",
+                    "cyan": "#6DD6CF",
+                    "pink": "#FF85B8",
+                    "gray": "#6A5A63",
+                    "success": "#4DCC8E",
+                    "danger": "#FF3D54",
+                    "warning": "#FFA857",
+                    "primary_font": "#2D0F1C",
+                    "secondary_font": "#FFB0D0",
+                    "red_font": "#3A0A11",
+                    "orange_font": "#3A1A0D",
+                    "yellow_font": "#3A2C0F",
+                    "green_font": "#0C3A28",
+                    "blue_font": "#0D1F3A",
+                    "purple_font": "#250D3A",
+                    "cyan_font": "#0C3A36",
+                    "pink_font": "#3A0A1F",
+                    "gray_font": "#2B2326",
+                    "success_font": "#0C3A28",
+                    "danger_font": "#3A0A11",
+                    "warning_font": "#3A1F0D",
+                    "golden": "#FFD700",
+                    "golden_font": "#2D0F1C",
+                    "silver": "#C0C0C0",
+                    "silver_font": "#2D0F1C",
+                    "bronze": "#CD7F32",
+                    "bronze_font": "#E8D8DF"
+                }
+            }
+        };
+
+        const backgroundColors = [
+            "background", "block", "listBackground", "listItemBackground",
+            "primary", "secondary",
+            "red", "orange", "yellow", "green", "blue", "purple", "cyan", "gray", "pink",
+            "success", "danger", "warning",
+            "golden", "silver", "bronze"
+        ];
+
+        function getFontColor(colorName, colors) {
+            const fontMap = {
+                "background": "font",
+                "block": "font",
+                "listBackground": "listItemFont",
+                "listItemBackground": "listItemFont",
+                "primary": "primary_font",
+                "secondary": "secondary_font",
+                "red": "red_font",
+                "orange": "orange_font",
+                "yellow": "yellow_font",
+                "green": "green_font",
+                "blue": "blue_font",
+                "purple": "purple_font",
+                "cyan": "cyan_font",
+                "gray": "gray_font",
+                "pink": "pink_font",
+                "success": "success_font",
+                "danger": "danger_font",
+                "warning": "warning_font",
+                "golden": "golden_font",
+                "silver": "silver_font",
+                "bronze": "bronze_font"
+            };
+            return colors[fontMap[colorName]] || colors.font;
+        }
+
+        function createColorItem(colorName, colors) {
+            const colorValue = colors[colorName];
+            const fontColor = getFontColor(colorName, colors);
+            const div = document.createElement('div');
+            div.className = 'color-item';
+            div.style.backgroundColor = colorValue;
+            div.style.color = fontColor;
+            div.innerHTML = `
+                ${colorName}
+                <span class="color-value">${colorValue}</span>
+            `;
+            return div;
+        }
+
+        function createCard(theme) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const header = document.createElement('div');
+            header.className = 'card-header';
+            header.innerHTML = `
+                <div>
+                    <h2>${theme.title} <small style="font-size: 0.6em; color: #666;">(${theme.name})</small></h2>
+                    <div class="summary">${theme.summary}</div>
+                </div>
+                <span class="toggle-icon">▼</span>
+            `;
+
+            const body = document.createElement('div');
+            body.className = 'card-body';
+
+            const sections = [
+                {
+                    title: "Basic Background Colors",
+                    colors: ["background", "block", "listBackground", "listItemBackground"]
+                },
+                {
+                    title: "Theme Colors",
+                    colors: ["primary", "secondary"]
+                },
+                {
+                    title: "Functional Colors",
+                    colors: ["red", "orange", "yellow", "green", "blue", "purple", "cyan", "gray", "pink"]
+                },
+                {
+                    title: "Extended Functional Colors",
+                    colors: ["success", "danger", "warning"]
+                },
+                {
+                    title: "Medal Colors",
+                    colors: ["golden", "silver", "bronze"]
+                }
+            ];
+
+            sections.forEach(section => {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'color-section';
+                sectionDiv.innerHTML = `<h3>${section.title}</h3>`;
+
+                const grid = document.createElement('div');
+                grid.className = 'color-grid';
+
+                section.colors.forEach(colorName => {
+                    grid.appendChild(createColorItem(colorName, theme.colors));
+                });
+
+                sectionDiv.appendChild(grid);
+                body.appendChild(sectionDiv);
+            });
+
+            header.addEventListener('click', () => {
+                header.classList.toggle('collapsed');
+                body.classList.toggle('hidden');
+            });
+
+            card.appendChild(header);
+            card.appendChild(body);
+
+            return card;
+        }
+
+        function renderThemes() {
+            const container = document.getElementById('theme-cards');
+            Object.values(themes).forEach(theme => {
+                container.appendChild(createCard(theme));
+            });
+        }
+
+        renderThemes();
+    </script>
+</body>
+</html>
