@@ -1,0 +1,66 @@
+{
+    "version": "1.08",
+    "update_time": 0,
+    "themes": [
+        {
+            "name": "first",
+            "title": "主题一",
+            "author": "DGMan",
+            "summary": "温暖柔和的米色调主题，舒适宜人，适合日常使用，适合大多数用户"
+        },
+        {
+            "name": "second",
+            "title": "主题二",
+            "author": "DGMan",
+            "summary": "沉稳专业的深蓝灰色调主题，商务风格设计，适合专业环境"
+        },
+        {
+            "name": "third",
+            "title": "主题三",
+            "author": "DGMan",
+            "summary": "柔和浪漫的粉色系主题，女性化设计，营造温馨舒适的氛围"
+        },
+        {
+            "name": "fouth",
+            "title": "主题四",
+            "author": "DGMan",
+            "summary": "自然的大地色调主题，舒适的颜色，带来自然简约的感觉"
+        },
+        {
+            "name": "fifth",
+            "title": "主题五",
+            "author": "DGMan",
+            "summary": "明亮活泼的黄色调主题，充满活力，充满积极向上的能量"
+        },
+        {
+            "name": "sixth",
+            "title": "主题六",
+            "author": "DGMan",
+            "summary": "清新自然的绿色系主题，护眼舒适，适合长时间使用，减少眼部疲劳"
+        },
+        {
+            "name": "seven",
+            "title": "主题七",
+            "author": "DGMan",
+            "summary": "经典的深色模式主题，深沉的颜色，旨在减少眼部疲劳，适合夜间使用"
+        },
+        {
+            "name": "eight",
+            "title": "主题八",
+            "author": "DGMan",
+            "summary": "极致的暗黑风格主题，高对比度颜色，专为追求极致暗黑体验的用户设计"
+        },
+        {
+            "name": "nine",
+            "title": "主题九",
+            "author": "DGMan",
+            "summary": "中国风主题，优雅含蓄的颜色，展现传统中国美学"
+        },
+        {
+            "name": "tenth",
+            "title": "主题十",
+            "author": "DGMan",
+            "summary": "暗色红色系主题，强烈的对比颜色，具有强烈的视觉冲击力和大胆的设计"
+        }
+    ]
+}
