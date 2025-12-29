@@ -125,17 +125,17 @@
 | 字段 | 说明 | 示例 |
 |------|------|------|
 | `background` | 应用背景色 | `"#F6F3E8"` |
-| `font` | 主要文字颜色 | `"#161A30"` |
-| `block` | 块元素背景色 | `"#FEF8E6"` |
+| `font` | 主要文字颜色，用于background和block作为背景时的文字 | `"#161A30"` |
+| `block` | 块元素背景色 | `"#FEF8E8"` |
 
 #### 2. 主色调
 
 | 字段 | 说明 | 示例 |
 |------|------|------|
 | `primary` | 主色调 | `"#83A2FF"` |
-| `primary_font` | 主色调文字颜色 | `"#FEFEFE"` |
+| `primary_font` | primary作为背景时的文字颜色 | `"#FEFEFE"` |
 | `secondary` | 辅助色 | `"#D2DFFF"` |
-| `secondary_font` | 辅助色文字颜色 | `""` |
+| `secondary_font` | secondary作为背景时的文字颜色 | `"#161A30"` |
 
 #### 3. 列表样式
 
@@ -143,56 +143,127 @@
 |------|------|------|
 | `listBackground` | 列表背景色 | `"#D2DFFF"` |
 | `listItemBackground` | 列表项背景色 | `"#F6F3E8"` |
-| `listItemFont` | 列表项文字颜色 | `"#000000"` |
+| `listItemFont` | 列表项文字颜色，用于listBackground和listItemBackground作为背景时的文字 | `"#000000"` |
 
 #### 4. 功能颜色
 
 | 字段 | 说明 | 示例 |
 |------|------|------|
 | `red` | 红色（警告/错误） | `"#FA7070"` |
+| `red_font` | red作为背景时的文字颜色 | `"#FFFFFF"` |
 | `orange` | 橙色（提示） | `"#F3B664"` |
+| `orange_font` | orange作为背景时的文字颜色 | `"#161A30"` |
 | `yellow` | 黄色（注意） | `"#CAC011"` |
+| `yellow_font` | yellow作为背景时的文字颜色 | `"#161A30"` |
 | `green` | 绿色（成功） | `"#9FBB73"` |
+| `green_font` | green作为背景时的文字颜色 | `"#FFFFFF"` |
 | `blue` | 蓝色（信息） | `"#B4BDFF"` |
+| `blue_font` | blue作为背景时的文字颜色 | `"#161A30"` |
 | `purple` | 紫色（特殊） | `"#C683D7"` |
+| `purple_font` | purple作为背景时的文字颜色 | `"#FFFFFF"` |
 | `cyan` | 青色（信息） | `"#9AD0C2"` |
+| `cyan_font` | cyan作为背景时的文字颜色 | `"#161A30"` |
 | `gray` | 灰色（禁用/次要） | `"#4E4E4E"` |
+| `gray_font` | gray作为背景时的文字颜色 | `"#FFFFFF"` |
+| `pink` | 粉色（功能色，与其他功能颜色red、orange、yellow、green、blue、purple、cyan、gray同类） | `"#FFB4D8"` |
+| `pink_font` | pink作为背景时的文字颜色 | `"#161A30"` |
 
 #### 5. 扩展功能颜色
 
 | 字段 | 说明 | 示例 |
 |------|------|------|
 | `success` | 成功状态 | `"#39AD4E"` |
+| `success_font` | success作为背景时的文字颜色 | `"#FFFFFF"` |
 | `danger` | 危险状态 | `"#E76D5E"` |
+| `danger_font` | danger作为背景时的文字颜色 | `"#FFFFFF"` |
 | `warning` | 警告状态 | `"#E9AA68"` |
+| `warning_font` | warning作为背景时的文字颜色 | `"#161A30"` |
 
-#### 6. 文字颜色
+#### 6. 奖牌颜色
 
 | 字段 | 说明 | 示例 |
 |------|------|------|
-| `red_font` | 红色文字 | `""` |
-| `orange_font` | 橙色文字 | `""` |
-| `yellow_font` | 黄色文字 | `""` |
-| `green_font` | 绿色文字 | `""` |
-| `blue_font` | 蓝色文字 | `""` |
-| `purple_font` | 紫色文字 | `""` |
-| `cyan_font` | 青色文字 | `""` |
-| `gray_font` | 灰色文字 | `""` |
+| `golden` | 金牌颜色（第一名） | `"#FFD700"` |
+| `golden_font` | golden作为背景时的文字颜色 | `"#161A30"` |
+| `silver` | 银牌颜色（第二名） | `"#C0C0C0"` |
+| `silver_font` | silver作为背景时的文字颜色 | `"#161A30"` |
+| `bronze` | 铜牌颜色（第三名） | `"#CD7F32"` |
+| `bronze_font` | bronze作为背景时的文字颜色 | `"#FFFFFF"` |
 
 #### 7. 按钮样式
 
 | 字段 | 说明 | 示例 |
 |------|------|------|
-| `btn_font` | 按钮文字颜色 | `"#FEFEFE"` |
+| `btn_font` | 通用按钮文字颜色，按钮背景色可从功能颜色、背景颜色中获取，需考虑与所有功能颜色和背景颜色的平衡 | `"#FEFEFE"` |
 
-#### 8. 特殊颜色（部分主题）
+### 颜色使用规则
 
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `pink` | 粉色 | `"#FFB4D8"` |
-| `silver` | 银色 | `""` |
-| `golden` | 金色 | `""` |
-| `bronze` | 青铜色 | `""` |
+#### 背景颜色分类
+
+可以作为背景的颜色包括：
+
+1. **基础背景色**
+   - `background` - 应用主背景
+   - `block` - 块元素背景
+   - `listBackground` - 列表背景
+   - `listItemBackground` - 列表项背景
+
+2. **主题色**
+   - `primary` - 主色调
+   - `secondary` - 辅助色
+
+3. **功能颜色**
+   - `red` - 红色
+   - `orange` - 橙色
+   - `yellow` - 黄色
+   - `green` - 绿色
+   - `blue` - 蓝色
+   - `purple` - 紫色
+   - `cyan` - 青色
+   - `gray` - 灰色
+   - `pink` - 粉色
+
+4. **扩展功能颜色**
+   - `success` - 成功
+   - `danger` - 危险
+   - `warning` - 警告
+
+5. **奖牌颜色**
+   - `golden` - 金牌
+   - `silver` - 银牌
+   - `bronze` - 铜牌
+
+#### 文字颜色对应关系
+
+每个背景颜色都有对应的文字颜色：
+
+| 背景颜色 | 对应文字颜色 |
+|----------|--------------|
+| `background` | `font` |
+| `block` | `font` |
+| `listBackground` | `listItemFont` |
+| `listItemBackground` | `listItemFont` |
+| `primary` | `primary_font` |
+| `secondary` | `secondary_font` |
+| `red` | `red_font` |
+| `orange` | `orange_font` |
+| `yellow` | `yellow_font` |
+| `green` | `green_font` |
+| `blue` | `blue_font` |
+| `purple` | `purple_font` |
+| `cyan` | `cyan_font` |
+| `gray` | `gray_font` |
+| `pink` | `pink_font` |
+| `success` | `success_font` |
+| `danger` | `danger_font` |
+| `warning` | `warning_font` |
+| `golden` | `golden_font` |
+| `silver` | `silver_font` |
+| `bronze` | `bronze_font` |
+
+#### 默认文字颜色规则
+
+功能颜色（包括奖牌色）的文字颜色如果缺少或为空字符串 `""`，则会使用 `btn_font` 代替。
 
 ### 颜色格式规范
 
@@ -222,32 +293,51 @@
   "primary": "#83A2FF",
   "primary_font": "#FEFEFE",
   "secondary": "#D2DFFF",
-  "secondary_font": "",
+  "secondary_font": "#161A30",
   "listBackground": "#D2DFFF",
   "listItemBackground": "#F6F3E8",
   "listItemFont": "#000000",
   "red": "#FA7070",
+  "red_font": "#FFFFFF",
   "orange": "#F3B664",
+  "orange_font": "#161A30",
   "yellow": "#CAC011",
+  "yellow_font": "#161A30",
   "green": "#9FBB73",
+  "green_font": "#FFFFFF",
   "blue": "#B4BDFF",
+  "blue_font": "#161A30",
   "purple": "#C683D7",
+  "purple_font": "#FFFFFF",
   "cyan": "#9AD0C2",
+  "cyan_font": "#161A30",
   "gray": "#4E4E4E",
+  "gray_font": "#FFFFFF",
+  "pink": "#FFB4D8",
+  "pink_font": "#161A30",
   "success": "#39AD4E",
+  "success_font": "#FFFFFF",
   "danger": "#E76D5E",
+  "danger_font": "#FFFFFF",
   "warning": "#E9AA68",
-  "red_font": "",
-  "orange_font": "",
-  "yellow_font": "",
-  "green_font": "",
-  "blue_font": "",
-  "purple_font": "",
-  "cyan_font": "",
-  "gray_font": "",
+  "warning_font": "#161A30",
+  "golden": "#FFD700",
+  "golden_font": "#161A30",
+  "silver": "#C0C0C0",
+  "silver_font": "#161A30",
+  "bronze": "#CD7F32",
+  "bronze_font": "#FFFFFF",
   "btn_font": "#FEFEFE"
 }
 ```
+
+**说明**：
+- 所有主题建议都应该具有完整的颜色列表
+- 功能颜色（包括奖牌色）的文字颜色如果缺少或为空字符串 `""`，则会使用 `btn_font` 代替
+- 奖牌颜色设计时应考虑其意义：
+  - `golden` - 金牌颜色，代表第一名，使用金色
+  - `silver` - 银牌颜色，代表第二名，使用银色
+  - `bronze` - 铜牌颜色，代表第三名，使用铜色
 
 ## 创建自定义主题
 
@@ -304,7 +394,12 @@ cp first.json my-theme.json
 - **绿色**：自然、成长、成功
 - **蓝色**：信任、专业、冷静
 - **紫色**：神秘、优雅、创意
-- **粉色**：浪漫、温柔、可爱
+- **粉色**：浪漫、温柔、可爱、少女心
+- **青色**：清新、平静、和谐
+- **灰色**：中性、稳重、低调
+- **金色**：高贵、荣耀、胜利
+- **银色**：纯洁、优雅、现代
+- **铜色**：稳重、传统、荣誉
 
 ## 注意事项
 
