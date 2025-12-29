@@ -1,151 +1,152 @@
-# 主题配置说明
+# Theme Configuration Guide
 
-## 概述
+## Overview
 
-本目录包含CashLog应用的所有主题配置文件。每个主题JSON文件定义了一套完整的颜色方案，用于控制应用的外观和视觉效果。
+This directory contains all theme configuration files for the CashLog application. Each theme JSON file defines a complete color scheme used to control the appearance and visual effects of the application.
 
-## 主题列表
+## Theme List
 
-| 主题文件 | 主题名称 | 主色调 | 特点 | 适用场景 |
-|---------|---------|--------|------|---------|
-| first.json | 温暖米色主题 | #83A2FF | 整体色调温暖舒适 | 通用主题，适合大多数用户 |
-| second.json | 深蓝灰色主题 | #4C6B89 | 色调沉稳专业，商务感强 | 商务环境，需要专业感的场景 |
-| third.json | 粉色浪漫主题 | #E676A7 | 浪漫温馨，女性化设计 | 女性用户，追求浪漫氛围 |
-| fouth.json | 大地色系主题 | #8D5966 | 自然舒适，回归自然 | 喜欢自然风格的用户 |
-| fifth.json | 明亮黄色主题 | #FDCF31 | 明亮活泼，充满活力 | 需要活力和积极氛围的场景 |
-| sixth.json | 清新绿色主题 | #1E7D5C | 清新自然，护眼舒适 | 长时间使用，需要护眼的场景 |
-| seven.json | 深色主题 | #8571CF | 深色模式，减少眼部疲劳 | 夜间使用，深色模式爱好者 |
-| eight.json | 暗黑主题 | #2F375A | 极致暗黑，对比度高 | 追求极致暗黑体验的用户 |
-| ninth.json | 中国红主题 | #A9C9C9 | 中国风配色，含蓄典雅 | 喜欢中国风的用户 |
-| tenth.json | 暗色红主题 | #C2002B | 暗色调配红色，对比强烈 | 喜欢强烈对比的用户 |
-| deepseek-girl.json | 粉色少女主题 | #FF69B4 | 少女心十足，可爱活泼 | 年轻女性用户，追求可爱风格 |
-| deepseek-girl.dark.json | 深色粉色主题 | #FF6B9D | 深色模式配粉色，时尚个性 | 夜间使用，喜欢深色粉色的用户 |
+| Theme File | Theme Name | Primary Color | Features | Use Case |
+|------------|-----------|---------------|----------|----------|
+| first.json | Warm Beige Theme | #83A2FF | Warm and comfortable overall tone | General theme, suitable for most users |
+| second.json | Deep Blue-Gray Theme | #4C6B89 | Calm and professional, strong business feel | Business environments, scenarios requiring professionalism |
+| third.json | Pink Romantic Theme | #E676A7 | Romantic and warm, feminine design | Female users, pursuing a romantic atmosphere |
+| fouth.json | Earth Tone Theme | #8D5966 | Natural and comfortable, back to nature | Users who prefer natural styles |
+| fifth.json | Bright Yellow Theme | #FDCF31 | Bright and lively, full of vitality | Scenarios needing energy and positive atmosphere |
+| sixth.json | Fresh Green Theme | #1E7D5C | Fresh and natural, eye-friendly and comfortable | Long-term use, scenarios needing eye protection |
+| seven.json | Dark Theme | #8571CF | Dark mode, reduces eye fatigue | Nighttime use, dark mode enthusiasts |
+| eight.json | Dark Black Theme | #2F375A | Extreme dark, high contrast | Users pursuing ultimate dark mode experience |
+| ninth.json | Chinese Red Theme | #A9C9C9 | Chinese style colors, subtle and elegant | Users who like Chinese style |
+| tenth.json | Dark Red Theme | #C2002B | Dark tone with red, strong contrast | Users who like strong contrast |
+| deepseek-girl.json | Pink Girly Theme | #FF69B4 | Full of girly heart, cute and lively | Young female users, pursuing cute style |
+| deepseek-girl.dark.json | Dark Pink Theme | #FF6B9D | Dark mode with pink, stylish and personalized | Nighttime use, users who like dark pink |
+| social.json | Social Theme | #1877F2 | Facebook style, clean and modern, friendly and beautiful | Social application scenarios, users who like Facebook style design |
 
-## 主题文件格式说明
+## Theme File Format Description
 
-### 基本结构
+### Basic Structure
 
-主题文件采用JSON格式，包含以下几类颜色配置：
+Theme files use JSON format and contain the following categories of color configurations:
 
-#### 1. 基础颜色
+#### 1. Base Colors
 
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `background` | 应用背景色 | `"#F6F3E8"` |
-| `font` | 主要文字颜色，用于background和block作为背景时的文字 | `"#161A30"` |
-| `block` | 块元素背景色 | `"#FEF8E8"` |
+| Field | Description | Example |
+|------|-------------|---------|
+| `background` | Application background color | `"#F6F3E8"` |
+| `font` | Main text color, used for text when background and block are backgrounds | `"#161A30"` |
+| `block` | Block element background color | `"#FEF8E8"` |
 
-#### 2. 主色调
+#### 2. Primary Colors
 
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `primary` | 主色调 | `"#83A2FF"` |
-| `primary_font` | primary作为背景时的文字颜色 | `"#FEFEFE"` |
-| `secondary` | 辅助色 | `"#D2DFFF"` |
-| `secondary_font` | secondary作为背景时的文字颜色 | `"#161A30"` |
+| Field | Description | Example |
+|------|-------------|---------|
+| `primary` | Primary color | `"#83A2FF"` |
+| `primary_font` | Text color when primary is used as background | `"#FEFEFE"` |
+| `secondary` | Secondary color | `"#D2DFFF"` |
+| `secondary_font` | Text color when secondary is used as background | `"#161A30"` |
 
-#### 3. 列表样式
+#### 3. List Styles
 
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `listBackground` | 列表背景色 | `"#D2DFFF"` |
-| `listItemBackground` | 列表项背景色 | `"#F6F3E8"` |
-| `listItemFont` | 列表项文字颜色，用于listBackground和listItemBackground作为背景时的文字 | `"#000000"` |
+| Field | Description | Example |
+|------|-------------|---------|
+| `listBackground` | List background color | `"#D2DFFF"` |
+| `listItemBackground` | List item background color | `"#F6F3E8"` |
+| `listItemFont` | List item text color, used for text when listBackground and listItemBackground are backgrounds | `"#000000"` |
 
-#### 4. 功能颜色
+#### 4. Functional Colors
 
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `red` | 红色（警告/错误） | `"#FA7070"` |
-| `red_font` | red作为背景时的文字颜色 | `"#FFFFFF"` |
-| `orange` | 橙色（提示） | `"#F3B664"` |
-| `orange_font` | orange作为背景时的文字颜色 | `"#161A30"` |
-| `yellow` | 黄色（注意） | `"#CAC011"` |
-| `yellow_font` | yellow作为背景时的文字颜色 | `"#161A30"` |
-| `green` | 绿色（成功） | `"#9FBB73"` |
-| `green_font` | green作为背景时的文字颜色 | `"#FFFFFF"` |
-| `blue` | 蓝色（信息） | `"#B4BDFF"` |
-| `blue_font` | blue作为背景时的文字颜色 | `"#161A30"` |
-| `purple` | 紫色（特殊） | `"#C683D7"` |
-| `purple_font` | purple作为背景时的文字颜色 | `"#FFFFFF"` |
-| `cyan` | 青色（信息） | `"#9AD0C2"` |
-| `cyan_font` | cyan作为背景时的文字颜色 | `"#161A30"` |
-| `gray` | 灰色（禁用/次要） | `"#4E4E4E"` |
-| `gray_font` | gray作为背景时的文字颜色 | `"#FFFFFF"` |
-| `pink` | 粉色（功能色，与其他功能颜色red、orange、yellow、green、blue、purple、cyan、gray同类） | `"#FFB4D8"` |
-| `pink_font` | pink作为背景时的文字颜色 | `"#161A30"` |
+| Field | Description | Example |
+|------|-------------|---------|
+| `red` | Red (warning/error) | `"#FA7070"` |
+| `red_font` | Text color when red is used as background | `"#FFFFFF"` |
+| `orange` | Orange (hint) | `"#F3B664"` |
+| `orange_font` | Text color when orange is used as background | `"#161A30"` |
+| `yellow` | Yellow (attention) | `"#CAC011"` |
+| `yellow_font` | Text color when yellow is used as background | `"#161A30"` |
+| `green` | Green (success) | `"#9FBB73"` |
+| `green_font` | Text color when green is used as background | `"#FFFFFF"` |
+| `blue` | Blue (information) | `"#B4BDFF"` |
+| `blue_font` | Text color when blue is used as background | `"#161A30"` |
+| `purple` | Purple (special) | `"#C683D7"` |
+| `purple_font` | Text color when purple is used as background | `"#FFFFFF"` |
+| `cyan` | Cyan (information) | `"#9AD0C2"` |
+| `cyan_font` | Text color when cyan is used as background | `"#161A30"` |
+| `gray` | Gray (disabled/secondary) | `"#4E4E4E"` |
+| `gray_font` | Text color when gray is used as background | `"#FFFFFF"` |
+| `pink` | Pink (functional color, same category as other functional colors red, orange, yellow, green, blue, purple, cyan, gray) | `"#FFB4D8"` |
+| `pink_font` | Text color when pink is used as background | `"#161A30"` |
 
-#### 5. 扩展功能颜色
+#### 5. Extended Functional Colors
 
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `success` | 成功状态 | `"#39AD4E"` |
-| `success_font` | success作为背景时的文字颜色 | `"#FFFFFF"` |
-| `danger` | 危险状态 | `"#E76D5E"` |
-| `danger_font` | danger作为背景时的文字颜色 | `"#FFFFFF"` |
-| `warning` | 警告状态 | `"#E9AA68"` |
-| `warning_font` | warning作为背景时的文字颜色 | `"#161A30"` |
+| Field | Description | Example |
+|------|-------------|---------|
+| `success` | Success state | `"#39AD4E"` |
+| `success_font` | Text color when success is used as background | `"#FFFFFF"` |
+| `danger` | Danger state | `"#E76D5E"` |
+| `danger_font` | Text color when danger is used as background | `"#FFFFFF"` |
+| `warning` | Warning state | `"#E9AA68"` |
+| `warning_font` | Text color when warning is used as background | `"#161A30"` |
 
-#### 6. 奖牌颜色
+#### 6. Medal Colors
 
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `golden` | 金牌颜色（第一名） | `"#FFD700"` |
-| `golden_font` | golden作为背景时的文字颜色 | `"#161A30"` |
-| `silver` | 银牌颜色（第二名） | `"#C0C0C0"` |
-| `silver_font` | silver作为背景时的文字颜色 | `"#161A30"` |
-| `bronze` | 铜牌颜色（第三名） | `"#CD7F32"` |
-| `bronze_font` | bronze作为背景时的文字颜色 | `"#FFFFFF"` |
+| Field | Description | Example |
+|------|-------------|---------|
+| `golden` | Gold medal color (first place) | `"#FFD700"` |
+| `golden_font` | Text color when golden is used as background | `"#161A30"` |
+| `silver` | Silver medal color (second place) | `"#C0C0C0"` |
+| `silver_font` | Text color when silver is used as background | `"#161A30"` |
+| `bronze` | Bronze medal color (third place) | `"#CD7F32"` |
+| `bronze_font` | Text color when bronze is used as background | `"#FFFFFF"` |
 
-#### 7. 按钮样式
+#### 7. Button Styles
 
-| 字段 | 说明 | 示例 |
-|------|------|------|
-| `btn_font` | 通用按钮文字颜色，一般被功能色、奖牌色、block作为按钮背景色时使用 | `"#FEFEFE"` |
+| Field | Description | Example |
+|------|-------------|---------|
+| `btn_font` | Universal button text color, generally used when functional colors, medal colors, and block are used as button background colors | `"#FEFEFE"` |
 
-### 颜色使用规则
+### Color Usage Rules
 
-#### 背景颜色分类
+#### Background Color Categories
 
-可以作为背景的颜色包括：
+Colors that can be used as backgrounds include:
 
-1. **基础背景色**
-   - `background` - 应用主背景
-   - `block` - 块元素背景
-   - `listBackground` - 列表背景
-   - `listItemBackground` - 列表项背景
+1. **Base Background Colors**
+   - `background` - Application main background
+   - `block` - Block element background
+   - `listBackground` - List background
+   - `listItemBackground` - List item background
 
-2. **主题色**
-   - `primary` - 主色调
-   - `secondary` - 辅助色
+2. **Theme Colors**
+   - `primary` - Primary color
+   - `secondary` - Secondary color
 
-3. **功能颜色**
-   - `red` - 红色
-   - `orange` - 橙色
-   - `yellow` - 黄色
-   - `green` - 绿色
-   - `blue` - 蓝色
-   - `purple` - 紫色
-   - `cyan` - 青色
-   - `gray` - 灰色
-   - `pink` - 粉色
+3. **Functional Colors**
+   - `red` - Red
+   - `orange` - Orange
+   - `yellow` - Yellow
+   - `green` - Green
+   - `blue` - Blue
+   - `purple` - Purple
+   - `cyan` - Cyan
+   - `gray` - Gray
+   - `pink` - Pink
 
-4. **扩展功能颜色**
-   - `success` - 成功
-   - `danger` - 危险
-   - `warning` - 警告
+4. **Extended Functional Colors**
+   - `success` - Success
+   - `danger` - Danger
+   - `warning` - Warning
 
-5. **奖牌颜色**
-   - `golden` - 金牌
-   - `silver` - 银牌
-   - `bronze` - 铜牌
+5. **Medal Colors**
+   - `golden` - Gold medal
+   - `silver` - Silver medal
+   - `bronze` - Bronze medal
 
-#### 文字颜色对应关系
+#### Text Color Correspondence
 
-每个背景颜色都有对应的文字颜色：
+Each background color has a corresponding text color:
 
-| 背景颜色 | 对应文字颜色 |
-|----------|--------------|
+| Background Color | Corresponding Text Color |
+|------------------|--------------------------|
 | `background` | `font` |
 | `block` | `font` |
 | `listBackground` | `listItemFont` |
@@ -168,29 +169,29 @@
 | `silver` | `silver_font` |
 | `bronze` | `bronze_font` |
 
-#### 默认文字颜色规则
+#### Default Text Color Rule
 
-功能颜色（包括奖牌色）的文字颜色如果缺少或为空字符串 `""`，则会使用 `btn_font` 代替。
+If the text color for functional colors (including medal colors) is missing or an empty string `""`, `btn_font` will be used instead.
 
-### 颜色格式规范
+### Color Format Specification
 
-所有颜色值必须使用十六进制格式，格式为 `#RRGGBB`，其中：
-- RR：红色分量（00-FF）
-- GG：绿色分量（00-FF）
-- BB：蓝色分量（00-FF）
+All color values must use hexadecimal format, in the format `#RRGGBB`, where:
+- RR: Red component (00-FF)
+- GG: Green component (00-FF)
+- BB: Blue component (00-FF)
 
-示例：
-- `"#FFFFFF"` - 白色
-- `"#000000"` - 黑色
-- `"#FF0000"` - 红色
-- `"#00FF00"` - 绿色
-- `"#0000FF"` - 蓝色
+Examples:
+- `"#FFFFFF"` - White
+- `"#000000"` - Black
+- `"#FF0000"` - Red
+- `"#00FF00"` - Green
+- `"#0000FF"` - Blue
 
-### 可选字段说明
+### Optional Field Description
 
-某些字段在某些主题中可能为空字符串 `""`，表示该字段未定义或使用默认值。在实际使用时，应用会根据需要使用默认颜色或继承其他颜色。
+Some fields in some themes may be empty strings `""`, indicating that the field is undefined or uses default values. In actual use, the application will use default colors or inherit other colors as needed.
 
-### 完整示例
+### Complete Example
 
 ```json
 {
@@ -238,35 +239,35 @@
 }
 ```
 
-**说明**：
-- 所有主题建议都应该具有完整的颜色列表
-- 功能颜色（包括奖牌色）的文字颜色如果缺少或为空字符串 `""`，则会使用 `btn_font` 代替
-- 奖牌颜色设计时应考虑其意义：
-  - `golden` - 金牌颜色，代表第一名，使用金色
-  - `silver` - 银牌颜色，代表第二名，使用银色
-  - `bronze` - 铜牌颜色，代表第三名，使用铜色
+**Note**:
+- All themes are recommended to have a complete color list
+- If the text color for functional colors (including medal colors) is missing or an empty string `""`, `btn_font` will be used instead
+- When designing medal colors, consider their meaning:
+  - `golden` - Gold medal color, representing first place, using gold
+  - `silver` - Silver medal color, representing second place, using silver
+  - `bronze` - Bronze medal color, representing third place, using bronze
 
-## 创建自定义主题
+## Creating Custom Themes
 
-### 步骤1：复制现有主题
+### Step 1: Copy Existing Theme
 
-建议从现有的主题文件复制一个作为模板，例如：
+It is recommended to copy an existing theme file as a template, for example:
 
 ```bash
 cp first.json my-theme.json
 ```
 
-### 步骤2：修改颜色值
+### Step 2: Modify Color Values
 
-根据您的需求修改JSON文件中的颜色值。建议使用在线颜色选择器工具来选择合适的颜色。
+Modify the color values in the JSON file according to your needs. It is recommended to use online color picker tools to select appropriate colors.
 
-### 步骤3：测试主题
+### Step 3: Test Theme
 
-在应用中加载新主题，检查视觉效果是否满意。
+Load the new theme in the application and check if the visual effect is satisfactory.
 
-### 步骤4：注册主题（可选）
+### Step 4: Register Theme (Optional)
 
-如果需要在主题列表中显示您的主题，可以在 `sources.json` 文件中添加主题信息：
+If you need to display your theme in the theme list, you can add theme information in the `sources.json` file:
 
 ```json
 {
@@ -277,63 +278,72 @@ cp first.json my-theme.json
 }
 ```
 
-## 设计建议
+## Design Recommendations
 
-### 配色原则
+### Color Principles
 
-1. **对比度**：确保文字颜色与背景色有足够的对比度，保证可读性
-   - 对于浅色背景（如黄色、青色、紫色、灰色等浅色调），必须使用深色文字（如 `#2A2A2A`、`#231816`、`#3A2A20` 等）
-   - 避免在浅色背景上使用浅色或中等深度的文字，这会导致文字难以阅读
-   - 常见错误示例：
-     - 黄色背景 `#F2DD26` 配浅米色文字 `#FEF8E6`（对比度极低）
-     - 青色背景 `#9AD0C2` 配灰色文字 `#6F7E92`（对比度较低）
-     - 紫色背景 `#EE82EE` 配灰色文字 `#6F7E92`（对比度较低）
-   - 推荐做法：
-     - 浅色背景使用深色文字（黑色系、深灰色系、深棕色系）
-     - 深色背景使用浅色文字（白色系、浅灰色系）
-     - 参考现有主题的配色方案，确保对比度符合可读性标准
+1. **Contrast**: Ensure sufficient contrast between text color and background color to guarantee readability
+   - For light backgrounds (such as yellow, cyan, purple, gray and other light tones), dark text must be used (such as `#2A2A2A`, `#231816`, `#3A2A20`, etc.)
+   - Avoid using light or medium-depth text on light backgrounds, which will make text difficult to read
+   - Common error examples:
+     - Yellow background `#F2DD26` with light beige text `#FEF8E6` (extremely low contrast)
+     - Cyan background `#9AD0C2` with gray text `#6F7E92` (relatively low contrast)
+     - Purple background `#EE82EE` with gray text `#6F7E92` (relatively low contrast)
+   - Recommended practices:
+     - Use dark text on light backgrounds (black series, dark gray series, dark brown series)
+     - Use light text on dark backgrounds (white series, light gray series)
+     - Refer to existing theme color schemes to ensure contrast meets readability standards
 
-2. **一致性**：保持颜色方案的一致性，不要使用过多不同的颜色
-3. **情感表达**：根据主题的情感定位选择合适的颜色
-4. **可访问性**：考虑色盲用户的需求，避免仅依靠颜色传达信息
+2. **Consistency**: Maintain consistency in the color scheme, do not use too many different colors
+3. **Emotional Expression**: Choose appropriate colors according to the emotional positioning of the theme
+4. **Accessibility**: Consider the needs of color-blind users, avoid relying solely on color to convey information
 
-### 常见配色方案
+### Common Color Schemes
 
-1. **单色方案**：使用同一色相的不同明度和饱和度
-2. **互补色方案**：使用色轮上相对的颜色
-3. **三色方案**：使用色轮上等距的三个颜色
-4. **类比色方案**：使用色轮上相邻的颜色
+1. **Monochromatic Scheme**: Use different brightness and saturation of the same hue
+2. **Complementary Color Scheme**: Use opposite colors on the color wheel
+3. **Triadic Scheme**: Use three equally spaced colors on the color wheel
+4. **Analogous Color Scheme**: Use adjacent colors on the color wheel
 
-### 颜色心理学
+### Color Psychology
 
-- **红色**：热情、紧急、警告
-- **橙色**：活力、友好、创意
-- **黄色**：快乐、乐观、注意
-- **绿色**：自然、成长、成功
-- **蓝色**：信任、专业、冷静
-- **紫色**：神秘、优雅、创意
-- **粉色**：浪漫、温柔、可爱、少女心
-- **青色**：清新、平静、和谐
-- **灰色**：中性、稳重、低调
-- **金色**：高贵、荣耀、胜利
-- **银色**：纯洁、优雅、现代
-- **铜色**：稳重、传统、荣誉
+- **Red**: Passion, urgency, warning
+- **Orange**: Energy, friendliness, creativity
+- **Yellow**: Happiness, optimism, attention
+- **Green**: Nature, growth, success
+- **Blue**: Trust, professionalism, calmness
+- **Purple**: Mystery, elegance, creativity
+- **Pink**: Romance, gentleness, cuteness, girly heart
+- **Cyan**: Freshness, calmness, harmony
+- **Gray**: Neutrality, stability, low-key
+- **Golden**: Nobility, glory, victory
+- **Silver**: Purity, elegance, modernity
+- **Bronze**: Stability, tradition, honor
 
-## 注意事项
+## Important Notes
 
-1. 所有JSON文件必须符合有效的JSON格式
-2. 颜色值必须使用十六进制格式
-3. 字段名必须使用英文，区分大小写
-4. 建议使用代码编辑器编辑JSON文件，确保格式正确
-5. 修改主题前建议备份原始文件
+1. All JSON files must conform to valid JSON format
+2. Color values must use hexadecimal format
+3. Field names must use English and are case-sensitive
+4. It is recommended to use a code editor to edit JSON files to ensure correct formatting
+5. It is recommended to back up original files before modifying themes
+6. **Must update update_time field when updating sources.json**:
+   - The `update_time` field should be filled with the current timestamp (Unix timestamp, in seconds)
+   - Methods to get timestamp:
+     - macOS/Linux: `date +%s`
+     - Windows: `powershell -Command "[int][double]::Parse((Get-Date -UFormat %s))"`
+     - Online tool: https://www.unixtimestamp.com/
+   - Example: `"update_time": 1766995701`
+   - **Important**: Every time you modify sources.json or sources.zh.json, you must synchronously update the update_time field to the current timestamp, otherwise theme updates may not be correctly recognized by the application
 
-## 相关文件
+## Related Files
 
-- `sources.json`：主题列表配置文件，包含所有主题的元数据信息
+- `sources.json`: Theme list configuration file, containing metadata information for all themes
 
-## 版本信息
+## Version Information
 
-当前主题配置版本：1.09
+Current theme configuration version: 1.10
 
-**更新说明**：
-- v1.09：增强配色原则说明，详细说明文字颜色与背景色的对比度要求，避免设计新主题时出现可读性问题
+**Update Notes**:
+- v1.10: Added social theme, adopting Facebook design style, using iconic blue primary color and clean social media design; added update_time field usage instructions, reminding developers to synchronize timestamp updates when updating theme list
+- v1.09: Enhanced color principle description, detailed explanation of contrast requirements between text color and background color, avoiding readability issues when designing new themes
