@@ -35,9 +35,16 @@
     "purple_font": "#250D3A",
     "cyan_font": "#0C3A36",
     "pink_font": "#3A0A1F",
-    "gray_font": "#2B2326",
+    "gray_font": "#1A1015",
     
     "success_font": "#0C3A28",
     "danger_font": "#3A0A11",
-    "warning_font": "#3A1F0D"
+    "warning_font": "#3A1F0D",
+    
+    "golden": "#FFD700",
+    "golden_font": "#2D0F1C",
+    "silver": "#C0C0C0",
+    "silver_font": "#2D0F1C",
+    "bronze": "#CD7F32",
+    "bronze_font": "#E8D8DF"
   }
