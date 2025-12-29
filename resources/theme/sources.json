@@ -61,6 +61,12 @@
             "title": "Theme:NO10",
             "author": "DGMan",
             "summary": "A dark red theme with strong contrast colors, featuring intense visual impact and bold design"
+        },
+        {
+            "name": "social",
+            "title": "Social",
+            "author": "DGMan",
+            "summary": "A Facebook-inspired theme with iconic blue primary color and clean social media design, featuring modern and friendly aesthetics"
         }
     ]
 }

@@ -61,6 +61,12 @@
             "title": "主题十",
             "author": "DGMan",
             "summary": "暗色红色系主题，强烈的对比颜色，具有强烈的视觉冲击力和大胆的设计"
+        },
+        {
+            "name": "social",
+            "title": "社交主题",
+            "author": "DGMan",
+            "summary": "Facebook风格主题，采用标志性的蓝色主色调和简洁的社交媒体设计，展现现代友好的美学风格"
         }
     ]
 }
